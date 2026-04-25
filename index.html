@@ -521,14 +521,51 @@ opacity:0.8;
 
 /* CONTACT */
 
-input,textarea{
+.contact-form{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:15px;
+margin-top:20px;
+width:100%;
+}
 
-width:300px;
-padding:10px;
-margin:10px;
+/* Inputs + textarea */
+.contact-form input,
+.contact-form textarea{
+width:100%;
+max-width:500px;
+padding:12px;
 border:none;
-border-radius:5px;
+border-radius:8px;
+outline:none;
+font-size:14px;
+background:#1c1c1c;
+color:white;
+}
 
+/* Textarea specific */
+.contact-form textarea{
+min-height:100px;
+resize:vertical; /* allow height resize */
+}
+
+/* Button */
+.contact-form button{
+padding:12px 30px;
+background:#ff4c4c;
+border:none;
+border-radius:8px;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+background:#ffcc70;
+color:black;
+transform:scale(1.05);
 }
 
 /* ANIMATION */
@@ -939,14 +976,15 @@ to bring useful knowledge and exciting stories to our readers.
 <section id="contact" class="section">
 
 <h1>Contact Us</h1>
+<form class="contact-form" onsubmit="handleSubmit(event)">
 
-<input placeholder="Your Name">
-<input placeholder="Email">
-<textarea placeholder="Message"></textarea>
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<textarea id="message" placeholder="Your Message" required></textarea>
 
-<button style="padding:10px 25px;background:#ff4c4c;border:none;color:white;border-radius:6px;">
-Send Message
-</button>
+<button type="submit">Submit</button>
+
+</form>
 
 <h2 style="margin-top:40px;">Follow Us</h2>
 
@@ -1059,6 +1097,33 @@ document.getElementById("reviewName").value="";
 document.getElementById("reviewText").value="";
 
 }
+function handleSubmit(e){
+e.preventDefault(); // stops page reload
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let message = document.getElementById("message").value.trim();
+
+/* Validation */
+if(!name || !email || !message){
+    alert("Please fill all fields");
+    return;
+}
+
+/* Email format check */
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+if(!email.match(emailPattern)){
+    alert("Enter a valid email");
+    return;
+}
+
+/* Success */
+alert("Form submitted successfully ✅");
+
+/* Reset form */
+document.querySelector(".contact-form").reset();
+}
+
 
 
 
