@@ -402,6 +402,7 @@ margin:5px 0;
 }
 
 
+
 .post-content{
 max-width:800px;
 background:#111;
@@ -414,6 +415,39 @@ text-align:center;
 width:100%;
 border-radius:10px;
 margin:20px 0;
+}
+
+
+.contact-container{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:50px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.contact-form{
+flex:1;
+min-width:300px;
+max-width:500px;
+}
+
+.contact-side{
+flex:1;
+min-width:250px;
+max-width:400px;
+}
+
+.contact-row{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+gap:20px;
+}
+
+.contact-row span{
+white-space:nowrap;
 }
 
 
@@ -519,6 +553,16 @@ margin-top:10px;
 .blog-post p{
 font-size:14px;
 opacity:0.8;
+}
+
+.about-contact{
+margin-top:15px;
+font-size:14px;
+opacity:0.9;
+}
+
+.about-contact p{
+margin:4px 0;
 }
 
 /* CONTACT */
@@ -900,6 +944,11 @@ to explore more.
 <span>🍔 Food</span>
 </div>
 
+<div class="about-contact">
+<p>📞 +91 9015937208</p>
+<p>📧 gaurav5@gmail.com</p>
+</div>
+
 </div>
 
 
@@ -918,10 +967,14 @@ to bring useful knowledge and exciting stories to our readers.
 <span>🏔 Adventure</span>
 </div>
 
+
+<div class="about-contact">
+<p>📞 +91 8168966002</p>
+<p>📧 garvit77@email.com</p>
 </div>
 
 </div>
-
+</div>
 </section>
 
 <!--Reviews-->
@@ -978,6 +1031,8 @@ to bring useful knowledge and exciting stories to our readers.
 <section id="contact" class="section">
 
 <h1>Contact Us</h1>
+<div class="contact-container">
+
 <form class="contact-form" onsubmit="handleSubmit(event)">
 
 <input type="text" id="name" placeholder="Your Name" required>
@@ -988,33 +1043,32 @@ to bring useful knowledge and exciting stories to our readers.
 
 </form>
 
-<h2 style="margin-top:40px;">Follow Us</h2>
-
-<div class="social-icons">
-
-<a href="https://instagram.com" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://twitter.com" target="_blank">
-<i class="fab fa-twitter"></i>
-</a>
-
-<a href="https://linkedin.com" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="https://github.com" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-</div>
+<div class="contact-side">
 
 <div class="contact-info">
 
-<p>📞 Phone: +91 9015937208</p>
+<div class="contact-row">
+<span>📞 Gaurav: +91 9015937208</span>
+<span>📧 : gaurav5@gmail.com</span>
+</div>
 
-<p>📧 Email: myblog50@gmail.com</p>
+<div class="contact-row">
+<span>📞 Garvit: +91 8168966002</span>
+<span>📧 : garvit77@email.com</span>
+</div>
+
+</div>
+
+<h2 style="margin-top:30px; padding-left: 34%;">Follow Us</h2>
+
+<div class="social-icons">
+<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+</div>
+
+</div>
 
 </div>
 
